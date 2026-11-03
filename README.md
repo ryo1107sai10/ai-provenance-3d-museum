@@ -26,6 +26,7 @@
 
 ## デプロイ（決定: GitHub Pages / Vercelは使わない）
 - 公開URL（予定）: https://ryo1107sai10.github.io/ai-provenance-3d-museum/
-- 方式: `frontend/` の静的ビルドを GitHub Actions (`.github/workflows/deploy-pages.yml`) で Pages へ自動デプロイ（mainへpushで発動）
+- 方式: スタンドアロン版を `docs/index.html` に配置し、GitHub Pages の Branch publishing（main / `/docs`）で公開。Actionsワークフローは GitHub App の権限で push できないため未使用
 - リポジトリは Public（無料プランの Pages 要件）
-- 台帳データはスタンドアロン版ではブラウザ保存（localStorage/IndexedDB）。オンチェーン刻印は backend/ + contracts/ を使用
+- 台帳データはスタンドアロン版ではブラウザ保存（localStorage）。オンチェーン刻印は backend/ + contracts/ を使用
+- Pages有効化（初回のみ手動）: リポジトリ Settings → Pages → Source: Deploy from a branch → main / /docs → Save
